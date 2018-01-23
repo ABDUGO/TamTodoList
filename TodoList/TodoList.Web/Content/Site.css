@@ -1,18 +1,225 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+html {
+    direction: rtl;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body {
+    font-family: 'Dubai-Regular', Helvetica, sans-serif;
+    background-color: #f9f9f9 !important;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+svg.svg-img.svg-white use {
+    fill: #fff;
 }
 
+a {
+    text-decoration: none;
+}
+
+    a:hover, a:active, a:focus {
+        text-decoration: none;
+    }
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 200px);
+    height: 64px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    transition: all ease-in-out 0.2s;
+    z-index: 10001;
+}
+
+.sidebar-sm .topbar {
+    width: calc(100% - 66.5px);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    height: 1024px;
+    background-color: #273648;
+    transition: all ease-in-out 0.2s;
+    z-index: 10002;
+}
+
+    .sidebar .site-logo-div {
+        height: 64px;
+    }
+
+        .sidebar .site-logo-div .site-logo {
+            margin-top: 16px;
+            margin-right: 16px;
+            height: 32px;
+            width: 83px;
+        }
+
+        .sidebar .site-logo-div .sidebar-toggle-icon {
+            float: left;
+            fill: #fff;
+            margin: 8px;
+            height: 9.3px;
+            width: 9.3px;
+        }
+
+    .sidebar .sidebar-menu {
+        -webkit-padding-start: 0px;
+    }
+
+        .sidebar .sidebar-menu li.sidebar-menu-item {
+            width: 100%;
+            height: 48px;
+            margin: 8px 0px;
+            padding: 12px 4px 12px 12px;
+        }
+
+            .sidebar .sidebar-menu li.sidebar-menu-item:first-child {
+                margin-top: 0px;
+            }
+
+            .sidebar .sidebar-menu li.sidebar-menu-item.active {
+                background: #4A90E2 /*url(/Images/icon-arrow-left.svg) no-repeat 12px 50%*/;
+            }
+
+            .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-icon {
+                margin: 0px 8px;
+                vertical-align: middle;
+            }
+
+            .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-active-icon {
+                float: left;
+                margin-top: 4px;
+                display: none;
+            }
+
+            .sidebar .sidebar-menu li.sidebar-menu-item.active .sidebar-menu-item-active-icon {
+                display: inline;
+            }
+
+            .sidebar .sidebar-menu li.sidebar-menu-item a {
+                line-height: 30px;
+                font-family: Dubai-Medium;
+                font-size: 18px;
+                color: #EDF4FC;
+            }
+
+    .sidebar .sidebar-user-info {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        height: 80px;
+        border-top: 1px solid #3D4A5A;
+    }
+
+        .sidebar .sidebar-user-info .sidebar-avatar-icon {
+            float: right;
+            margin: 16px 16px 0px 0px;
+        }
+
+        .sidebar .sidebar-user-info .sidebar-user-info-list {
+            float: right;
+            margin: 24px 8px;
+        }
+
+            .sidebar .sidebar-user-info .sidebar-user-info-list .sidebar-user-name {
+                font-family: Dubai-Medium;
+                font-size: 14px;
+                color: #EDF4FC;
+            }
+
+            .sidebar .sidebar-user-info .sidebar-user-info-list .sidebar-user-company {
+                font-family: Dubai-Medium;
+                font-size: 11px;
+                color: rgba(237,244,252,0.50);
+            }
+
+        .sidebar .sidebar-user-info .sidebar-user-caret {
+            float: right;
+            margin: 32px 16px;
+        }
+
+.sidebar-sm .sidebar {
+    width: 66.5px;
+}
+
+    .sidebar-sm .sidebar .sidebar-user-info {
+        width: 66.5px;
+    }
+
+    .sidebar-sm .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-desc {
+        display: none;
+    }
+
+    .sidebar-sm .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-icon {
+        margin-right: 20px;
+    }
+
+    .sidebar-sm .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-active-icon {
+        display: none;
+    }
+
+    .sidebar-sm .sidebar .sidebar-user-info .sidebar-avatar-icon {
+        margin-right: 10px;
+    }
+
+.sidebar-sm .main-content {
+    margin-right: 66.5px;
+}
+
+
+.main-content {
+    margin-right: 200px;
+    padding-top: 64px;
+    transition: all ease-in-out 0.2s;
+}
+
+    .main-content .main-group {
+        padding: 0px 16px;
+        font-family: Dubai-Medium;
+        font-size: 20px;
+        color: #30394A;
+    }
+
+        .main-content .main-group .main-group-title {
+            margin: 32px 0px 8px 0px;
+            padding-bottom: 8px;
+            font-family: Dubai-Medium;
+            font-size: 20px;
+            color: #30394A;
+        }
+
+.todo-container {
+    padding: 0px;
+    overflow: hidden;
+}
+
+    .todo-container .todo-list {
+    }
+
+        .todo-container .todo-list .todo-list-item {
+        }
+
+            .todo-container .todo-list .todo-list-item .todo-list-item-icon {
+                height: 24px;
+                width: 24px;
+                margin: 21px 13px;
+                vertical-align: middle;
+            }
+
+            .todo-container .todo-list .todo-list-item .todo-list-item-text {
+                line-height: 30px;
+                font-family: Dubai-Regular;
+                font-size: 18px;
+                color: #666666;
+            }
+
+            .todo-container .todo-list .todo-list-item.done .todo-list-item-text {
+                text-decoration: line-through;
+                color: rgba(102,102,102,0.50);
+            }

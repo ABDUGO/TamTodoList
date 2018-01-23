@@ -4,37 +4,98 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Tam Todo List</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <!-- Dubai Font -->
+    <link href="~/Content/dubai-font.css" rel="stylesheet" />
+    <!-- Animate Css -->
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <!-- Main Site Css -->
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
+    <div class="topbar">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="sidebar-sm" data-target=".sidebar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @*<div class="navbar-brand"><img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" /></div>*@
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
         </div>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Todo List</p>
-        </footer>
-    </div>
+    <aside>
+
+        <div id="Sidebar" class="sidebar">
+            <div id="SiteLogo" class="site-logo-div">
+                <img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" />
+                <span class="toggle-sidebar">
+                    <img class="sidebar-toggle-icon svg-img svg-white" src="~/Images/icon-close.svg" />
+                </span>
+            </div>
+
+            <nav>
+                <ul id="Menu" class="sidebar-menu list-unstyled">
+                    <li class="sidebar-menu-item active">
+                        <a href="#">
+                            <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-list.svg" />
+                            <span class="sidebar-menu-item-desc">المهام</span>
+                            <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#">
+                            <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-user.svg" />
+                            <span class="sidebar-menu-item-desc">الأعضاء</span>
+                            <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#">
+                            <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-creditcard.svg" />
+                            <span class="sidebar-menu-item-desc">الدفع والفواتير</span>
+                            <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#">
+                            <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-settings.svg" />
+                            <span class="sidebar-menu-item-desc">إعدادات</span>
+                            <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-user-info">
+                <img class="sidebar-avatar-icon" src="~/Images/avatar.png" />
+                <ul class="sidebar-user-info-list list-unstyled">
+                    <li class="sidebar-user-name">محمد عبدالله</li>
+                    <li class="sidebar-user-company">الشركة المحدودة</li>
+                </ul>
+                <img class="svg-img sidebar-user-caret" src="~/Images/icon-arrow-down-small.png" />
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="main-content">
+            @RenderBody()
+        </div>
+    </main>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <!-- Main Script -->
+    <script src="~/Scripts/main.js"></script>
 </body>
 </html>
