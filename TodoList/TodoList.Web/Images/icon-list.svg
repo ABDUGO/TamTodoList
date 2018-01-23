@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-list</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M2,5 L22,5 L22,8 L2,8 L2,5 Z M2,11 L22,11 L22,14 L2,14 L2,11 Z M2,17 L22,17 L22,20 L2,20 L2,17 Z" id="path-1"></path>
+    </defs>
+    <g id="Todo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-994.000000, -81.000000)">
+        <g id="menu" transform="translate(824.000000, 0.000000)">
+            <g id="links" transform="translate(0.000000, 64.000000)">
+                <g id="◼️link1">
+                    <g id="🔘-right" transform="translate(168.000000, 12.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="icon-list" fill="#273648" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
