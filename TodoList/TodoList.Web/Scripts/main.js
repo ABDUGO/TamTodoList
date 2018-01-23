@@ -73,6 +73,12 @@
 
         $todoListItem.toggleClass('done');
 
+        // Sort by default All Undone at the top of the List
+        if (isDone)
+            $todoListItem.prependTo($todoListItem.parent());
+        else
+            $todoListItem.appendTo($todoListItem.parent());
+
         return false;
     });
 
