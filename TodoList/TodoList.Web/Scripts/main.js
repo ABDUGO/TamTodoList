@@ -74,12 +74,29 @@
         $todoListItem.toggleClass('done');
 
         // Sort by default All Undone at the top of the List
-        if (isDone)
+        $todoListItem.removeClass('animated bounceInUp bounceInDown');
+
+        if (isDone) {
             $todoListItem.prependTo($todoListItem.parent());
-        else
+            $todoListItem.addClass('animated bounceInDown');
+        } else {
             $todoListItem.appendTo($todoListItem.parent());
+            $todoListItem.addClass('animated bounceInUp');
+        }
 
         return false;
+    });
+
+    // Add Animation On Scroll
+    $('.animated').waypoint(function () {
+        var ths = $($(this)[0].element);
+        ths.toggleClass(ths.data('animated'));
+        ths.css('opacity', 1);
+
+        this.destroy();
+    }, {
+        offset: '90%',
+        triggerOnce: true
     });
 
 })(jQuery);

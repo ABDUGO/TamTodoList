@@ -4,14 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Tam Todo List</title>
-
     <!-- bootstrap -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
-
     <!-- Dubai Font -->
     <link href="~/Content/dubai-font.css" rel="stylesheet" />
-
+    <!-- Animate Css -->
+    <link href="~/Content/animate.css" rel="stylesheet" />
     <!-- Main Site Css -->
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
@@ -20,12 +19,12 @@
 <body>
     <div class="topbar">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="sidebar-sm" data-target=".sidebar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @*<div class="navbar-brand"><img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" /></div>*@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav"></ul>
@@ -36,7 +35,7 @@
 
         <div id="Sidebar" class="sidebar">
             <div id="SiteLogo" class="site-logo-div">
-                <img class="site-logo" src="~/Images/logo.png" />
+                <img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" />
                 <span class="toggle-sidebar">
                     <img class="sidebar-toggle-icon svg-img svg-white" src="~/Images/icon-close.svg" />
                 </span>
@@ -94,6 +93,9 @@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <!-- Main Script -->
     <script src="~/Scripts/main.js"></script>
 </body>
 </html>
