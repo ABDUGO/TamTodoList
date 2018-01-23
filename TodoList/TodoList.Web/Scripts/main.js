@@ -7,7 +7,7 @@
 
     // Change IMG to inline SVGs...
     var svgPathCounter = 0;
-    $('img[src$=".svg"]').each(function () {
+    $('img.svg-img[src$=".svg"]').each(function () {
         var $img = $(this);
         var imgID = $img.attr('id');
         var imgClass = $img.attr('class');
@@ -63,5 +63,17 @@
     //    if (currentSidebarMode == 'opened')
     //        $html.addClass('sidebar-sm');
     //});
+
+    // Check/Uncheck Todo List Items
+    $('.todo-list-item-link').click(function (e) {
+        var $todoListItem = $(this).parent();
+        var isDone = $todoListItem.hasClass('done');
+
+        $todoListItem.find('.todo-list-item-icon').attr('src', (isDone ? '/Images/icon-uncheck.svg' : '/Images/icon-check.svg'));
+
+        $todoListItem.toggleClass('done');
+
+        return false;
+    });
 
 })(jQuery);
