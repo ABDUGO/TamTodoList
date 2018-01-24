@@ -18,31 +18,52 @@
 </head>
 <body>
     <div class="topbar">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="sidebar-sm" data-target=".sidebar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @*<div class="navbar-brand"><img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" /></div>*@
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav"></ul>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
+            <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
+            <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
+            <span class="glyphicon glyphicon-remove sidebar-menu-opened-icon"></span>
+        </button>
+
+        <div class="navbar-left">
+            <ul class="list-unstyled list-inline">
+                <li class="dropdown search-category-dropdown">
+                    <a class="search-category-text dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="search-category-label">جميع المهام</span>
+                        <span class="search-category-icon"><i class="glyphicon glyphicon-filter"></i></span>
+                        <img class="svg-img search-category-caret" src="~/Images/icon-arrow-down-small-dark.svg" />
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">التصميم</a></li>
+                        <li><a href="#">تحسينات</a></li>
+                        <li><a href="#">أخرى</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="search" class="form-control search-input" placeholder="بحث" />
+                </li>
+            </ul>
+
         </div>
     </div>
 
     <aside>
 
+        <!-- Sidebar -->
         <div id="Sidebar" class="sidebar">
+            <!-- Site Logo -->
             <div id="SiteLogo" class="site-logo-div">
                 <img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" />
                 <span class="toggle-sidebar">
                     <img class="sidebar-toggle-icon svg-img svg-white" src="~/Images/icon-close.svg" />
                 </span>
             </div>
+            <!-- / Site Logo -->
 
             <nav>
+                <!-- Sidebar Menu -->
                 <ul id="Menu" class="sidebar-menu list-unstyled">
+                    <!-- Sidebar Item -->
                     <li class="sidebar-menu-item active">
                         <a href="#">
                             <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-list.svg" />
@@ -50,6 +71,8 @@
                             <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
                         </a>
                     </li>
+                    <!-- / Sidebar Item -->
+                    <!-- Sidebar Item -->
                     <li class="sidebar-menu-item">
                         <a href="#">
                             <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-user.svg" />
@@ -57,6 +80,8 @@
                             <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
                         </a>
                     </li>
+                    <!-- / Sidebar Item -->
+                    <!-- Sidebar Item -->
                     <li class="sidebar-menu-item">
                         <a href="#">
                             <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-creditcard.svg" />
@@ -64,6 +89,8 @@
                             <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
                         </a>
                     </li>
+                    <!-- / Sidebar Item -->
+                    <!-- Sidebar Item -->
                     <li class="sidebar-menu-item">
                         <a href="#">
                             <img class="svg-img svg-white sidebar-menu-item-icon" src="~/Images/icon-settings.svg" />
@@ -71,9 +98,12 @@
                             <img class="svg-img svg-white sidebar-menu-item-active-icon" src="~/Images/icon-arrow-left.svg" />
                         </a>
                     </li>
+                    <!-- / Sidebar Item -->
                 </ul>
+                <!-- / Sidebar Menu -->
             </nav>
 
+            <!-- User Info -->
             <div class="sidebar-user-info">
                 <img class="sidebar-avatar-icon" src="~/Images/avatar.png" />
                 <ul class="sidebar-user-info-list list-unstyled">
@@ -82,13 +112,19 @@
                 </ul>
                 <img class="svg-img sidebar-user-caret" src="~/Images/icon-arrow-down-small.png" />
             </div>
+            <!-- / User Info -->
+
         </div>
+        <!-- / Site Logo -->
+
     </aside>
 
     <main>
+        <!-- Mian Content -->
         <div class="main-content">
             @RenderBody()
         </div>
+        <!-- / Mian Content -->
     </main>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>

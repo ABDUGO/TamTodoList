@@ -47,11 +47,16 @@
 
     // Toggle Sidebar
     var currentSidebarMode = 'opened';
-    $('.sidebar .toggle-sidebar').click(function (e) {
+    $('.sidebar .toggle-sidebar, .topbar .navbar-toggle').click(function (e) {
         var isSmallSidebar = $html.hasClass('sidebar-sm');
         currentSidebarMode = !isSmallSidebar ? 'opened' : 'closed';
 
+        $('.topbar .navbar-toggle .sidebar-menu-opened-icon, .topbar .navbar-toggle .sidebar-menu-closed-icon').toggleClass('hidden');
+
         $html.toggleClass('sidebar-sm');
+
+        // Just run this animation onload then remove it
+        $('.site-logo').removeClass('animated zoomIn');
     });
 
     // Mouse over/out Sidebar
@@ -89,14 +94,58 @@
 
     // Add Animation On Scroll
     $('.animated').waypoint(function () {
-        var ths = $($(this)[0].element);
-        ths.toggleClass(ths.data('animated'));
-        ths.css('opacity', 1);
+        var $this = $($(this)[0].element);
+        $this.toggleClass($this.data('animated'));
+        $this.css('opacity', 1);
 
         this.destroy();
     }, {
-        offset: '90%',
-        triggerOnce: true
+            offset: '90%',
+            triggerOnce: true
+        });
+
+    // Search on typing 
+    $('.topbar .navbar-left .search-input').keyup(function (e) {
+        var $this = $(this);
+        var searchText = $this.val().trim()
+
+        if (searchText) {
+
+            $('.todo-container .todo-list .todo-list-item').hide();
+            $('.todo-container .todo-list .todo-list-item .todo-list-item-text:contains("' + searchText.replace(/"/g, '\"') + '")').each(function () {
+                var $this = $(this);
+                var $todoListItem = $this.parents('.todo-list-item');
+                $todoListItem.show();
+
+                // Hightlight Matches Chars
+                $this.html($this.text().replace(new RegExp(searchText, 'gi'), '<span class="search-match-highlight">' + searchText + '</span>'));
+
+            });
+
+        } else {
+            // no search text ? reset all highlights and show all todo list items
+            $('.todo-container .todo-list .todo-list-item').show();
+            $('.todo-container .todo-list .todo-list-item .todo-list-item-text').each(function () {
+                var $this = $(this);
+                // Unhightlight all Chars
+                $this.html($this.text());
+            });
+        }
     });
+
+    $(window).resize(function () {
+        if (screen.availWidth < 768) {
+            $('.topbar .navbar-toggle .sidebar-menu-closed-icon').removeClass('hidden');
+            $('.topbar .navbar-toggle .sidebar-menu-opened-icon').addClass('hidden');
+            $html.addClass('sidebar-sm');
+        }
+        else {
+            $('.topbar .navbar-toggle .sidebar-menu-closed-icon').addClass('hidden');
+            $('.topbar .navbar-toggle .sidebar-menu-opened-icon').removeClass('hidden');
+            $html.removeClass('sidebar-sm');
+        }
+    });
+
+    $(window).resize();
 
 })(jQuery);
