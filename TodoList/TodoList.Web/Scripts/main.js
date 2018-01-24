@@ -47,11 +47,16 @@
 
     // Toggle Sidebar
     var currentSidebarMode = 'opened';
-    $('.sidebar .toggle-sidebar').click(function (e) {
+    $('.sidebar .toggle-sidebar, .topbar .navbar-toggle').click(function (e) {
         var isSmallSidebar = $html.hasClass('sidebar-sm');
         currentSidebarMode = !isSmallSidebar ? 'opened' : 'closed';
 
+        $('.topbar .navbar-toggle .sidebar-menu-opened-icon, .topbar .navbar-toggle .sidebar-menu-closed-icon').toggleClass('hidden');
+
         $html.toggleClass('sidebar-sm');
+
+        // Just run this animation onload then remove it
+        $('.site-logo').removeClass('animated zoomIn');
     });
 
     // Mouse over/out Sidebar
@@ -95,8 +100,8 @@
 
         this.destroy();
     }, {
-        offset: '90%',
-        triggerOnce: true
-    });
+            offset: '90%',
+            triggerOnce: true
+        });
 
 })(jQuery);

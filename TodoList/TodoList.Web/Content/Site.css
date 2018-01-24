@@ -32,6 +32,24 @@ a {
     z-index: 10001;
 }
 
+    .topbar .navbar-toggle {
+        float: right;
+        width: 44px;
+        height: 34px;
+        margin: 16px 8px;
+        background: #273648;
+        display: block;
+    }
+
+        .topbar .navbar-toggle .icon-bar {
+            background-color: #fff;
+        }
+
+        .topbar .navbar-toggle .glyphicon {
+            color: #fff;
+            margin-top: -4px;
+        }
+
 .sidebar-sm .topbar {
     width: calc(100% - 66.5px);
 }
@@ -67,82 +85,91 @@ a {
             width: 9.3px;
         }
 
-    .sidebar .sidebar-menu {
-        -webkit-padding-start: 0px;
+.sidebar-sm .site-logo-div {
+    width: 51px;
+    background: url(/Images/logo.png) no-repeat -48px 16px;
+}
+
+    .sidebar-sm .site-logo-div .site-logo {
+        display: none;
     }
 
-        .sidebar .sidebar-menu li.sidebar-menu-item {
-            width: 100%;
-            height: 48px;
-            margin: 8px 0px;
-            padding: 12px 4px 12px 12px;
-        }
+.sidebar .sidebar-menu {
+    -webkit-padding-start: 0px;
+}
 
-            .sidebar .sidebar-menu li.sidebar-menu-item:first-child {
-                margin-top: 0px;
-            }
-
-            .sidebar .sidebar-menu li.sidebar-menu-item.active {
-                background: #4A90E2 /*url(/Images/icon-arrow-left.svg) no-repeat 12px 50%*/;
-            }
-
-            .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-icon {
-                margin: 0px 8px;
-                vertical-align: middle;
-            }
-
-            .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-active-icon {
-                float: left;
-                margin-top: 4px;
-                display: none;
-            }
-
-            .sidebar .sidebar-menu li.sidebar-menu-item.active .sidebar-menu-item-active-icon {
-                display: inline;
-            }
-
-            .sidebar .sidebar-menu li.sidebar-menu-item a {
-                line-height: 30px;
-                font-family: Dubai-Medium;
-                font-size: 18px;
-                color: #EDF4FC;
-            }
-
-    .sidebar .sidebar-user-info {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 200px;
-        height: 80px;
-        border-top: 1px solid #3D4A5A;
+    .sidebar .sidebar-menu li.sidebar-menu-item {
+        width: 100%;
+        height: 48px;
+        margin: 8px 0px;
+        padding: 12px 4px 12px 12px;
     }
 
-        .sidebar .sidebar-user-info .sidebar-avatar-icon {
-            float: right;
-            margin: 16px 16px 0px 0px;
+        .sidebar .sidebar-menu li.sidebar-menu-item:first-child {
+            margin-top: 0px;
         }
 
-        .sidebar .sidebar-user-info .sidebar-user-info-list {
-            float: right;
-            margin: 24px 8px;
+        .sidebar .sidebar-menu li.sidebar-menu-item.active {
+            background: #4A90E2 /*url(/Images/icon-arrow-left.svg) no-repeat 12px 50%*/;
         }
 
-            .sidebar .sidebar-user-info .sidebar-user-info-list .sidebar-user-name {
-                font-family: Dubai-Medium;
-                font-size: 14px;
-                color: #EDF4FC;
-            }
-
-            .sidebar .sidebar-user-info .sidebar-user-info-list .sidebar-user-company {
-                font-family: Dubai-Medium;
-                font-size: 11px;
-                color: rgba(237,244,252,0.50);
-            }
-
-        .sidebar .sidebar-user-info .sidebar-user-caret {
-            float: right;
-            margin: 32px 16px;
+        .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-icon {
+            margin: 0px 8px;
+            vertical-align: middle;
         }
+
+        .sidebar .sidebar-menu li.sidebar-menu-item .sidebar-menu-item-active-icon {
+            float: left;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .sidebar .sidebar-menu li.sidebar-menu-item.active .sidebar-menu-item-active-icon {
+            display: inline;
+        }
+
+        .sidebar .sidebar-menu li.sidebar-menu-item a {
+            line-height: 30px;
+            font-family: Dubai-Medium;
+            font-size: 18px;
+            color: #EDF4FC;
+        }
+
+.sidebar .sidebar-user-info {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 80px;
+    border-top: 1px solid #3D4A5A;
+}
+
+    .sidebar .sidebar-user-info .sidebar-avatar-icon {
+        float: right;
+        margin: 16px 16px 0px 0px;
+    }
+
+    .sidebar .sidebar-user-info .sidebar-user-info-list {
+        float: right;
+        margin: 24px 8px;
+    }
+
+        .sidebar .sidebar-user-info .sidebar-user-info-list .sidebar-user-name {
+            font-family: Dubai-Medium;
+            font-size: 14px;
+            color: #EDF4FC;
+        }
+
+        .sidebar .sidebar-user-info .sidebar-user-info-list .sidebar-user-company {
+            font-family: Dubai-Medium;
+            font-size: 11px;
+            color: rgba(237,244,252,0.50);
+        }
+
+    .sidebar .sidebar-user-info .sidebar-user-caret {
+        float: right;
+        margin: 32px 16px;
+    }
 
 .sidebar-sm .sidebar {
     width: 66.5px;
