@@ -18,14 +18,31 @@
 </head>
 <body>
     <div class="topbar">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
-                <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
-                <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
-                <span class="glyphicon glyphicon-remove sidebar-menu-opened-icon"></span>
-            </button>
-            @*<div class="navbar-brand"><img class="site-logo animated" data-animated="zoomIn" src="~/Images/logo.png" /></div>*@
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
+            <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
+            <span class="icon-bar sidebar-menu-closed-icon hidden"></span>
+            <span class="glyphicon glyphicon-remove sidebar-menu-opened-icon"></span>
+        </button>
+
+        <div class="navbar-left">
+            <ul class="list-unstyled list-inline">
+                <li class="dropdown search-category-dropdown">
+                    <a class="search-category-text dropdown-toggle" data-toggle="dropdown" href="#">
+                        جميع المهام
+                        <img class="svg-img search-category-caret" src="~/Images/icon-arrow-down-small-dark.svg" />
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">التصميم</a></li>
+                        <li><a href="#">تحسينات</a></li>
+                        <li><a href="#">أخرى</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="search" class="form-control search-input" placeholder="بحث" />
+                </li>
+            </ul>
+
         </div>
     </div>
 
@@ -54,7 +71,6 @@
                         </a>
                     </li>
                     <!-- / Sidebar Item -->
-
                     <!-- Sidebar Item -->
                     <li class="sidebar-menu-item">
                         <a href="#">
@@ -64,7 +80,6 @@
                         </a>
                     </li>
                     <!-- / Sidebar Item -->
-
                     <!-- Sidebar Item -->
                     <li class="sidebar-menu-item">
                         <a href="#">
@@ -74,7 +89,6 @@
                         </a>
                     </li>
                     <!-- / Sidebar Item -->
-                    
                     <!-- Sidebar Item -->
                     <li class="sidebar-menu-item">
                         <a href="#">

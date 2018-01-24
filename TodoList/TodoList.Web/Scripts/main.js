@@ -94,14 +94,51 @@
 
     // Add Animation On Scroll
     $('.animated').waypoint(function () {
-        var ths = $($(this)[0].element);
-        ths.toggleClass(ths.data('animated'));
-        ths.css('opacity', 1);
+        var $this = $($(this)[0].element);
+        $this.toggleClass($this.data('animated'));
+        $this.css('opacity', 1);
 
         this.destroy();
     }, {
             offset: '90%',
             triggerOnce: true
         });
+
+    // Search on typing 
+    $('.topbar .navbar-left .search-input').keyup(function (e) {
+        var $this = $(this);
+        var searchText = $this.val().trim()
+
+        if (searchText) {
+
+            $('.todo-container .todo-list .todo-list-item').hide();
+            $('.todo-container .todo-list .todo-list-item .todo-list-item-text:contains("' + searchText.replace(/"/g, '\"') + '")').each(function () {
+                var $this = $(this);
+                var $todoListItem = $this.parents('.todo-list-item');
+                $todoListItem.show();
+
+                // Hightlight Matches Chars
+                $this.html($this.text().replace(new RegExp(searchText, 'gi'), '<span class="search-match-highlight">' + searchText + '</span>'));
+
+            });
+
+        } else {
+            // no search text ? reset all highlights and show all todo list items
+            $('.todo-container .todo-list .todo-list-item').show();
+            $('.todo-container .todo-list .todo-list-item .todo-list-item-text').each(function () {
+                var $this = $(this);
+                // Unhightlight all Chars
+                $this.html($this.text());
+            });
+        }
+    });
+
+    $(window).resize(function () {
+        if (screen.availWidth < 768) {
+            $('.sidebar .toggle-sidebar').click();
+        }
+    });
+
+    $(window).resize();
 
 })(jQuery);

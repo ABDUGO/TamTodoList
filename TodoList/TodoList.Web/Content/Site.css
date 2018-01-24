@@ -35,8 +35,8 @@ a {
     .topbar .navbar-toggle {
         float: right;
         width: 44px;
-        height: 34px;
-        margin: 16px 8px;
+        height: 48px;
+        margin: 8px;
         background: #273648;
         display: block;
     }
@@ -47,8 +47,41 @@ a {
 
         .topbar .navbar-toggle .glyphicon {
             color: #fff;
-            margin-top: -4px;
+            font-size: 23px;
         }
+
+    .topbar .navbar-left {
+        margin: 8px !important;
+    }
+
+        .topbar .navbar-left .search-input {
+            width: 256px;
+            height: 48px;
+            border: 1px solid #e0e0e0;
+            font-family: Dubai-Regular;
+            font-size: 18px;
+            color: #B5B5B5;
+        }
+
+        .topbar .navbar-left .search-category-dropdown {
+            width: 160px;
+            height: 48px;
+            padding: 9px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+            .topbar .navbar-left .search-category-dropdown .search-category-text {
+                font-family: Dubai-Regular;
+                font-size: 18px;
+                color: #565656;
+            }
+
+            .topbar .navbar-left .search-category-dropdown .search-category-caret {
+                margin-left: 0px;
+                margin-top: 6px;
+                float: left;
+            }
 
 .sidebar-sm .topbar {
     width: calc(100% - 66.5px);
@@ -199,7 +232,6 @@ a {
     margin-right: 66.5px;
 }
 
-
 .main-content {
     margin-right: 200px;
     padding-top: 64px;
@@ -250,3 +282,32 @@ a {
                 text-decoration: line-through;
                 color: rgba(102,102,102,0.50);
             }
+
+            .todo-container .todo-list .todo-list-item .todo-list-item-badge {
+                float: left;
+                color: #919191;
+                padding: 8px;
+                margin: 16px 25px;
+                background: #E0E0E0;
+                border-radius: 100px;
+            }
+
+.search-match-highlight {
+    color: #f7951d;
+    font-weight: bold;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #4990e2; /* make the hightlight bg color as same as the MenuItem bg color */
+}
+
+@media (max-width: 768px) {
+    .topbar .navbar-left .search-category-dropdown {
+        display: none;
+    }
+
+    .topbar .navbar-left .search-input {
+        width: 175px;
+        /*display: none;*/
+    }
+}
