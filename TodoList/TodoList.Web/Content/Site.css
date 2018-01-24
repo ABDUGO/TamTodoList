@@ -331,6 +331,11 @@ a {
         .topbar .navbar-left .search-input:focus, .topbar .topbar .navbar-left .search-input:active {
             width: calc(100% - 72px) !important;
         }
+
+    .dropdown-menu {
+        right: auto !important;
+        left: 0 !important;
+    }
 }
 
 @media (max-width: 428px) {
