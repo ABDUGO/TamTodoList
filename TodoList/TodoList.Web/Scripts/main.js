@@ -135,7 +135,14 @@
 
     $(window).resize(function () {
         if (screen.availWidth < 768) {
-            $('.sidebar .toggle-sidebar').click();
+            $('.topbar .navbar-toggle .sidebar-menu-closed-icon').removeClass('hidden');
+            $('.topbar .navbar-toggle .sidebar-menu-opened-icon').addClass('hidden');
+            $html.addClass('sidebar-sm');
+        }
+        else {
+            $('.topbar .navbar-toggle .sidebar-menu-closed-icon').addClass('hidden');
+            $('.topbar .navbar-toggle .sidebar-menu-opened-icon').removeClass('hidden');
+            $html.removeClass('sidebar-sm');
         }
     });
 
